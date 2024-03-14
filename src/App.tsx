@@ -24,9 +24,10 @@ export default function App() {
                     <div className="button-style">
                         {selectedView == "homepage" ? <p>AdventureXP Homepage</p> : null}
                         {selectedView == "gokart" ? <p>AdventureXP Go-kart</p> : null}
-                        {selectedView == "minigolf" ? <p>AdventureXP Mini-gold</p> : null}
+                        {selectedView == "minigolf" ? <p>AdventureXP Mini-golf</p> : null}
                         {selectedView == "paintball" ? <p>AdventureXP Paintball</p> : null}
                         {selectedView == "climbing" ? <p>AdventureXP Climbing</p> : null}
+                        {selectedView == "company-arrangement" ? <p>AdventureXP Company Arrangement</p> : null}
                         {/* make new pages for the buttons here  */}
                     </div>
                 </div>
@@ -55,6 +56,9 @@ const Buttons = (props: ButtonProps) => {
             </button>
             <button className="btn-w100" onClick={() => handleSelected("climbing")}>
                 Climbing
+            </button>
+            <button className="btn-w100" onClick={() => handleSelected("company-arrangement")}>
+                Company Arrangement
             </button>
             {/* Add a new buttons here */}
         </>
