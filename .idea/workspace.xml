@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="180931f1-56a7-4d49-8002-8124f1624245" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/project-adventurexp-frontend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-    </list>
+    <list default="true" id="180931f1-56a7-4d49-8002-8124f1624245" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +37,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.NPM Start.executor": "Run",
     "npm.start.executor": "Run",
     "ts.external.directory.path": "C:\\Users\\Tobe2\\OneDrive\\Skrivebord\\KEA\\VS Code\\project-adventurexp-frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -73,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710441181661</updated>
-      <workItem from="1710441184287" duration="432000" />
+      <workItem from="1710441184287" duration="1252000" />
     </task>
     <servers />
   </component>
