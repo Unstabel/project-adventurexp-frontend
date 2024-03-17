@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
+import BookGokartButton from "./components/GokartReservationButton";
 
 
 export default function App() {
@@ -9,7 +10,6 @@ export default function App() {
     function handleSelected(selected: string) {
         setSelectedView(selected);
     }
-
 
     return (
         <>
@@ -23,7 +23,7 @@ export default function App() {
                     </div>
                     <div className="button-style">
                         {selectedView == "homepage" ? <p>AdventureXP Homepage</p> : null}
-                        {selectedView == "gokart" ? <p>AdventureXP Go-kart</p> : null}
+                        {selectedView == "gokart" ? <p>AdventureXP Go-kart <BookGokartButton/></p> : null}
                         {selectedView == "minigolf" ? <p>AdventureXP Mini-golf</p> : null}
                         {selectedView == "paintball" ? <p>AdventureXP Paintball</p> : null}
                         {selectedView == "climbing" ? <p>AdventureXP Climbing</p> : null}
