@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
 import BookGokartButton from "./components/GokartReservationButton";
+import BookMinigolfButton from "./components/MinigolfReservationButton";
+import BookPaintballButton from "./components/PaintballReservationButton";
+import BookClimbingButton from "./components/ClimbingReservationButton";
 
 
 export default function App() {
@@ -24,9 +27,9 @@ export default function App() {
                     <div className="button-style">
                         {selectedView == "homepage" ? <p>AdventureXP Homepage</p> : null}
                         {selectedView == "gokart" ? <p>AdventureXP Go-kart <BookGokartButton/></p> : null}
-                        {selectedView == "minigolf" ? <p>AdventureXP Mini-golf</p> : null}
-                        {selectedView == "paintball" ? <p>AdventureXP Paintball</p> : null}
-                        {selectedView == "climbing" ? <p>AdventureXP Climbing</p> : null}
+                        {selectedView == "minigolf" ? <p>AdventureXP Mini-golf <BookMinigolfButton/></p> : null}
+                        {selectedView == "paintball" ? <p>AdventureXP Paintball <BookPaintballButton/></p> : null}
+                        {selectedView == "climbing" ? <p>AdventureXP Climbing <BookClimbingButton/></p> : null}
                         {selectedView == "company-arrangement" ? <p>AdventureXP Company Arrangement</p> : null}
                         {/* make new pages for the buttons here  */}
                     </div>
