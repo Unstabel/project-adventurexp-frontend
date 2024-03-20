@@ -17,10 +17,32 @@ const BookMinigolfForm = () => {
         }));
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(formData);
+        try {
+            const response = await fetch('https://adventurexp.azurewebsites.net/minigolf', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            console.log('Form data submitted successfully');
+            setFormData({
+                name: '',
+                participants: '',
+                date: '',
+                time_start: '',
+                time_end: ''
+            });
+        } catch (error) {
+            console.error('There was a problem with your fetch operation:', error);
+        }
     };
+
 
     return (
         <form onSubmit={handleSubmit}>
