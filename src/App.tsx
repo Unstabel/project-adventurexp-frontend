@@ -4,6 +4,7 @@ import BookGokartButton from "./components/GokartReservationButton";
 import BookMinigolfButton from "./components/MinigolfReservationButton";
 import BookPaintballButton from "./components/PaintballReservationButton";
 import BookClimbingButton from "./components/ClimbingReservationButton";
+import {MainComponent} from "./components/AcitivityOverview";
 
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
                         {selectedView == "paintball" ? <p>AdventureXP Paintball <BookPaintballButton/></p> : null}
                         {selectedView == "climbing" ? <p>AdventureXP Climbing <BookClimbingButton/></p> : null}
                         {selectedView == "company-arrangement" ? <p>AdventureXP Company Arrangement</p> : null}
+                        {selectedView == "overview" ? <p><MainComponent/></p> : null}
                         {/* make new pages for the buttons here  */}
                     </div>
                 </div>
@@ -60,10 +62,13 @@ const Buttons = (props: ButtonProps) => {
             <button className="btn-w100" onClick={() => handleSelected("climbing")}>
                 Climbing
             </button>
+            {/* Add a new buttons here */}
             <button className="btn-w100" onClick={() => handleSelected("company-arrangement")}>
                 Company Arrangement
             </button>
-            {/* Add a new buttons here */}
+            <button className="btn-w100" onClick={() => handleSelected("overview")}>
+                Overview
+            </button>
         </>
     );
 };
