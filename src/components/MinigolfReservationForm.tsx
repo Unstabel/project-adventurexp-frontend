@@ -5,8 +5,8 @@ const BookMinigolfForm = () => {
         name: '',
         participants: '',
         date: '',
-        time_start: '',
-        time_end: ''
+        timeStart: '',
+        timeEnd: ''
     });
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -35,8 +35,8 @@ const BookMinigolfForm = () => {
                 name: '',
                 participants: '',
                 date: '',
-                time_start: '',
-                time_end: ''
+                timeStart: '',
+                timeEnd: ''
             });
         } catch (error) {
             console.error('There was a problem with your fetch operation:', error);
@@ -65,12 +65,12 @@ const BookMinigolfForm = () => {
             <br/>
             <label>
                 Time Start:
-                <input type="time" name="time_start" value={formData.time_start} onChange={handleChange}/>
+                <input type="time" name="timeStart" value={formData.timeStart} onChange={handleChange}/>
             </label>
             <br/>
             <label>
                 Time End:
-                <input type="time" name="time_end" value={formData.time_end} onChange={handleChange}/>
+                <input type="time" name="timeEnd" value={formData.timeEnd} onChange={handleChange}/>
             </label>
             <br/>
             <br/>
