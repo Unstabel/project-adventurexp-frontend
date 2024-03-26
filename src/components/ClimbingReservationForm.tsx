@@ -5,8 +5,8 @@ const BookClimbingForm = () => {
         name: '',
         participants: '',
         date: '',
-        time_start: '',
-        time_end: ''
+        timeStart: '',
+        timeEnd: ''
     });
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -17,9 +17,30 @@ const BookClimbingForm = () => {
         }));
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(formData);
+        try {
+            const response = await fetch('https://adventurexp.azurewebsites.net/climbing', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            console.log('Data submitted');
+            setFormData({
+                name: '',
+                participants: '',
+                date: '',
+                timeStart: '',
+                timeEnd: ''
+            });
+        } catch (error) {
+            console.error('There was a problem with your fetch operation:', error);
+        }
     };
 
     return (
@@ -43,12 +64,12 @@ const BookClimbingForm = () => {
             <br/>
             <label>
                 Time Start:
-                <input type="time" name="time_start" value={formData.time_start} onChange={handleChange}/>
+                <input type="time" name="timeStart" value={formData.timeStart} onChange={handleChange}/>
             </label>
             <br/>
             <label>
                 Time End:
-                <input type="time" name="time_end" value={formData.time_end} onChange={handleChange}/>
+                <input type="time" name="timeEnd" value={formData.timeEnd} onChange={handleChange}/>
             </label>
             <br/>
             <br/>

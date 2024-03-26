@@ -2,11 +2,11 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 
 const BookMinigolfForm = () => {
     const [formData, setFormData] = useState({
-        name: "",
-        participants: "",
-        date: "",
-        timeStart: "",
-        timeEnd: ""
+        name: '',
+        participants: '',
+        date: '',
+        timeStart: '',
+        timeEnd: ''
     });
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -32,11 +32,11 @@ const BookMinigolfForm = () => {
             }
             console.log('Data submitted');
             setFormData({
-                name: "",
-                participants: "",
-                date: "",
-                timeStart: "",
-                timeEnd: ""
+                name: '',
+                participants: '',
+                date: '',
+                timeStart: '',
+                timeEnd: ''
             });
         } catch (error) {
             console.error('There was a problem with your fetch operation:', error);
