@@ -15,6 +15,9 @@ const BookGokartButton = () => {
 
     return (
         <div>
+            <br/>
+            <p>Hello Brother</p>
+            <br/>
             <button className="btn-w100" type="button" onClick={handleClick}>
                 Make Go-Kart Reservation
             </button>
@@ -26,7 +29,7 @@ const BookGokartButton = () => {
                                 <span className="close" onClick={handleClose}>
                                     &times;
                                 </span>
-                                <BookGokartForm />
+                                <BookGokartForm/>
                             </div>
                         </div>
                     </div>,

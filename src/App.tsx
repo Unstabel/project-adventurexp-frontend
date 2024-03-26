@@ -26,13 +26,13 @@ export default function App() {
                         <Buttons onSelected={handleSelected} />
                     </div>
                     <div className="button-style">
-                        {selectedView == "homepage" ? <p>AdventureXP Homepage</p> : null}
-                        {selectedView == "gokart" ? <p>AdventureXP Go-kart <BookGokartButton/></p> : null}
-                        {selectedView == "minigolf" ? <p>AdventureXP Mini-golf <BookMinigolfButton/></p> : null}
-                        {selectedView == "paintball" ? <p>AdventureXP Paintball <BookPaintballButton/></p> : null}
-                        {selectedView == "climbing" ? <p>AdventureXP Climbing <BookClimbingButton/></p> : null}
-                        {selectedView == "company-arrangement" ? <p>AdventureXP Company Arrangement</p> : null}
-                        {selectedView == "overview" ? <p><MainComponent/></p> : null}
+                        {selectedView === "homepage" ? <p>AdventureXP Homepage</p> : null}
+                        {selectedView === "gokart" ? <p>AdventureXP Go-kart  <BookGokartButton/></p> : null}
+                        {selectedView === "minigolf" ? <p>AdventureXP Mini-golf <BookMinigolfButton/></p> : null}
+                        {selectedView === "paintball" ? <p>AdventureXP Paintball <BookPaintballButton/></p> : null}
+                        {selectedView === "climbing" ? <p>AdventureXP Climbing <BookClimbingButton/></p> : null}
+                        {selectedView === "company-arrangement" ? <p>AdventureXP Company Arrangement</p> : null}
+                        {selectedView === "overview" ? <p><MainComponent/></p> : null}
                         {/* make new pages for the buttons here  */}
                     </div>
                 </div>

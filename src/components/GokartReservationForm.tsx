@@ -55,7 +55,8 @@ const BookGokartForm = () => {
             <br/>
             <label>
                 Participants:
-                <input type="number" name="participants" required={true} value={formData.participants} onChange={handleChange}/>
+                <input type="number" name="participants" required={true} value={formData.participants}
+                       onChange={handleChange}/>
             </label>
             <br/>
             <label>
@@ -74,7 +75,7 @@ const BookGokartForm = () => {
             </label>
             <br/>
             <label>
-                Child Karts:
+                Child Karts (under 140cm):
                 <input
                     type="number"
                     name="childKarts"
@@ -84,13 +85,21 @@ const BookGokartForm = () => {
             </label>
             <br/>
             <label>
-                Adult Karts:
+                Adult Karts (over 140cm):
                 <input
                     type="number"
                     name="adultKarts"
                     value={formData.adultKarts}
                     onChange={handleChange}
                 />
+            </label>
+            <br/>
+            <br/>
+            <label>
+                I agree that all participants
+                <br/>
+                are over the age of 12
+                <input type="checkbox" name="age" required={true} onChange={handleChange}/>
             </label>
             <br/>
             <br/>

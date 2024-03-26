@@ -54,7 +54,8 @@ const BookPaintballForm = () => {
             <br/>
             <label>
                 Participants:
-                <input type="number" name="participants" required={true} value={formData.participants} onChange={handleChange}/>
+                <input type="number" name="participants" required={true} value={formData.participants}
+                       onChange={handleChange}/>
             </label>
             <br/>
             <label>
@@ -87,6 +88,14 @@ const BookPaintballForm = () => {
                     <option value="400">400</option>
                     <option value="500">500</option>
                 </select>
+            </label>
+            <br/>
+            <br/>
+            <label>
+                I agree that all participants
+                <br/>
+                are over the age of 16
+                <input type="checkbox" name="age" required={true} onChange={handleChange}/>
             </label>
             <br/>
             <br/>
