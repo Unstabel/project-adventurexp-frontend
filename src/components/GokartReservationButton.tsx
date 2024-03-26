@@ -16,8 +16,13 @@ const BookGokartButton = () => {
     return (
         <div>
             <br/>
-            <p>Hello Brother</p>
+            <p>In Adventure XP we offer go-kart as one of our fun activities.</p>
             <br/>
+            <p>Here you can make a reservation for you and your friends or family.</p>
+            <br/>
+            <p>Please not that all participants has to be 12 year or older to participate.</p>
+            <br/>
+
             <button className="btn-w100" type="button" onClick={handleClick}>
                 Make Go-Kart Reservation
             </button>

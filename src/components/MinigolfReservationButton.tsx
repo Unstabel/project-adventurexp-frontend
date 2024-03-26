@@ -15,6 +15,11 @@ const BookMinigolfButton = () => {
 
     return (
         <div>
+            <br/>
+            <p>In Adventure XP we offer mini-golf as one of our fun activities.</p>
+            <br/>
+            <p>Here you can make a reservation for you and your friends or family.</p>
+            <br/>
             <button className="btn-w100" type="button" onClick={handleClick}>
                 Make Mini-Golf Reservation
             </button>
@@ -26,7 +31,7 @@ const BookMinigolfButton = () => {
                                 <span className="close" onClick={handleClose}>
                                     &times;
                                 </span>
-                                <BookMinigolfForm />
+                                <BookMinigolfForm/>
                             </div>
                         </div>
                     </div>,

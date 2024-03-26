@@ -1,5 +1,15 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 
+const getCurrentDate = () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    let month = (now.getMonth() + 1).toString().padStart(2, '0');
+    let day = now.getDate().toString().padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+};
+
+
 const BookClimbingForm = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -58,7 +68,7 @@ const BookClimbingForm = () => {
             <br/>
             <label>
                 Date:
-                <input type="date" name="date" required={true} value={formData.date} onChange={handleChange}/>
+                <input type="date" name="date" required={true} value={formData.date} onChange={handleChange} min={getCurrentDate()}/>
             </label>
             <br/>
             <label>

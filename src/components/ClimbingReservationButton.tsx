@@ -14,7 +14,14 @@ const BookClimbingButton = () => {
     };
 
     return (
+
+
         <div>
+            <br/>
+            <p>In Adventure XP we offer climbing as one of our fun activities.</p>
+            <br/>
+            <p>Here you can make a reservation for you and your friends or family.</p>
+            <br/>
             <button className="btn-w100" type="button" onClick={handleClick}>
                 Make Climbing Reservation
             </button>
@@ -26,7 +33,7 @@ const BookClimbingButton = () => {
                                 <span className="close" onClick={handleClose}>
                                     &times;
                                 </span>
-                                <BookClimbingForm />
+                                <BookClimbingForm/>
                             </div>
                         </div>
                     </div>,
