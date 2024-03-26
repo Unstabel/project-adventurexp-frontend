@@ -9,6 +9,7 @@ const BookPaintballForm = () => {
         timeEnd: '',
         balls: ''
     });
+    const [formClosed, setFormClosed] = useState(false);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -29,21 +30,18 @@ const BookPaintballForm = () => {
                 body: JSON.stringify(formData),
             });
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error('Failed to submit form');
             }
             console.log('Data submitted');
-            setFormData({
-                name: '',
-                participants: '',
-                date: '',
-                timeStart: '',
-                timeEnd: '',
-                balls: ''
-            });
+            setFormClosed(true);
         } catch (error) {
             console.error('There was a problem with your fetch operation:', error);
         }
     };
+
+    if (formClosed) {
+        return <p>Your reservation has successfully been submitted!</p>;
+    }
 
     return (
         <form onSubmit={handleSubmit}>
@@ -51,36 +49,38 @@ const BookPaintballForm = () => {
             <br/>
             <label>
                 Name:
-                <input type="text" name="name" value={formData.name} onChange={handleChange}/>
+                <input type="text" name="name" required={true} value={formData.name} onChange={handleChange}/>
             </label>
             <br/>
             <label>
                 Participants:
-                <input type="number" name="participants" value={formData.participants} onChange={handleChange}/>
+                <input type="number" name="participants" required={true} value={formData.participants} onChange={handleChange}/>
             </label>
             <br/>
             <label>
                 Date:
-                <input type="date" name="date" value={formData.date} onChange={handleChange}/>
+                <input type="date" name="date" required={true} value={formData.date} onChange={handleChange}/>
             </label>
             <br/>
             <label>
                 Time Start:
-                <input type="time" name="timeStart" value={formData.timeStart} onChange={handleChange}/>
+                <input type="time" name="timeStart" required={true} value={formData.timeStart} onChange={handleChange}/>
             </label>
             <br/>
             <label>
                 Time End:
-                <input type="time" name="timeEnd" value={formData.timeEnd} onChange={handleChange}/>
+                <input type="time" name="timeEnd" required={true} value={formData.timeEnd} onChange={handleChange}/>
             </label>
             <br/>
             <label>
                 Balls per person:
                 <select
                     name="balls"
+                    required={true}
                     value={formData.balls}
                     onChange={handleChange}
                 >
+                    <option value="" disabled selected>Select number of balls</option>
                     <option value="100">100</option>
                     <option value="200">200</option>
                     <option value="300">300</option>
