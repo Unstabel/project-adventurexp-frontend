@@ -20,7 +20,7 @@ const BookPaintballButton = () => {
             <br/>
             <p>Here you can make a reservation for you and your friends or family.</p>
             <br/>
-            <p>Please not that all participants has to be 16 year or older to participate.</p>
+            <p>Please not that all participants has to be 16 years or older to participate.</p>
             <br/>
             <button className="btn-w100" type="button" onClick={handleClick}>
                 Make Paintball Reservation
