@@ -20,7 +20,7 @@ export function Overview({ entities }: OverviewProps) {
             <p>Here is the overview</p>
             <div>
                 {entities.map((entity, index) => (
-                    <div key={index}>
+                    <div className="overview-item" key={index}>
                         <div>Name: {entity.name}</div>
                         <div>Participants: {entity.participants}</div>
                         <div>Date: {entity.date}</div>
@@ -40,6 +40,7 @@ export function MainComponent() {
     const [paintballData, setPaintballData] = useState<Entity[]>([]);
     const [climbingData, setClimbingData] = useState<Entity[]>([]);
     const [gokartData, setGokartData] = useState<Entity[]>([]);
+    const [showCurrentDayBookings, setShowCurrentDayBookings] = useState<boolean>(false);
 
     useEffect(() => {
         Promise.all([
@@ -60,32 +61,74 @@ export function MainComponent() {
     const handleActivityButtonClick = (activity: string) => {
         setSelectedView(activity);
     };
+    const handleShowCurrentDayBookingsChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+        setShowCurrentDayBookings(event.target.checked);
+    };
 
-    let activityEntities: Entity[] = [];
-    switch (selectedView) {
-        case 'minigolf':
-            activityEntities = minigolfData;
-            break;
-        case 'paintball':
-            activityEntities = paintballData;
-            break;
-        case 'climbing':
-            activityEntities = climbingData;
-            break;
-        case 'gokart':
-            activityEntities = gokartData;
-            break;
-        default:
-            break;
+        let activityEntities: Entity[] = [];
+        switch (selectedView) {
+            case 'minigolf':
+                activityEntities = minigolfData;
+                break;
+            case 'paintball':
+                activityEntities = paintballData;
+                break;
+            case 'climbing':
+                activityEntities = climbingData;
+                break;
+            case 'gokart':
+                activityEntities = gokartData;
+                break;
+            default:
+                break;
+        }
+        const sortEntities = (entities: Entity[]) => {
+            return entities.sort((a, b) => {
+                // Compare dates
+                const dateComparison = a.date.toString().localeCompare(b.date.toString());
+                if (dateComparison !== 0) {
+                    return dateComparison;
+                }
+
+                // Compare timeStart if available
+                if (a.timeStart && b.timeStart) {
+                    return a.timeStart.toString().localeCompare(b.timeStart.toString());
+                }
+
+                // If timeStart is not available, consider them equal
+                return 0;
+            });
+        };
+
+        // Filter bookings for the current day if the checkbox is checked
+        if (showCurrentDayBookings) {
+            const currentDate = new Date();
+            activityEntities = activityEntities.filter(entity => {
+                const [year, month, day] = entity.date;
+                const entityDate = new Date(year, month - 1, day); // Month is 0-based in Date constructor
+                return entityDate.toDateString() == currentDate.toDateString();
+            });
+        }
+
+        // Sort the activityEntities
+        const sortedActivityEntities = sortEntities(activityEntities);
+
+        // Render the Overview component with sorted entities
+        return (
+            <div className="button-style">
+                <button onClick={() => handleActivityButtonClick('minigolf')}>Minigolf</button>
+                <button onClick={() => handleActivityButtonClick('paintball')}>Paintball</button>
+                <button onClick={() => handleActivityButtonClick('climbing')}>Climbing</button>
+                <button onClick={() => handleActivityButtonClick('gokart')}>Go-Kart</button>
+                <label>
+                    Show only current day bookings:
+                    <input
+                        type="checkbox"
+                        checked={showCurrentDayBookings}
+                        onChange={handleShowCurrentDayBookingsChange}
+                    />
+                </label>
+                <Overview entities={activityEntities}/>
+            </div>
+        );
     }
-
-    return (
-        <div className="button-style">
-            <button onClick={() => handleActivityButtonClick('minigolf')}>Minigolf</button>
-            <button onClick={() => handleActivityButtonClick('paintball')}>Paintball</button>
-            <button onClick={() => handleActivityButtonClick('climbing')}>Climbing</button>
-            <button onClick={() => handleActivityButtonClick('gokart')}>Go-Kart</button>
-            <Overview entities={activityEntities} />
-        </div>
-    );
-}
