@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/%3Chttps://unstabel.github.io/project-adventurexp-frontend/%3E/static/css/main.10506a40.css",
-    "main.js": "/%3Chttps://unstabel.github.io/project-adventurexp-frontend/%3E/static/js/main.cb5faf56.js",
-    "static/js/453.69b2b188.chunk.js": "/%3Chttps://unstabel.github.io/project-adventurexp-frontend/%3E/static/js/453.69b2b188.chunk.js",
-    "index.html": "/%3Chttps://unstabel.github.io/project-adventurexp-frontend/%3E/index.html",
-    "main.10506a40.css.map": "/%3Chttps://unstabel.github.io/project-adventurexp-frontend/%3E/static/css/main.10506a40.css.map",
-    "main.cb5faf56.js.map": "/%3Chttps://unstabel.github.io/project-adventurexp-frontend/%3E/static/js/main.cb5faf56.js.map",
-    "453.69b2b188.chunk.js.map": "/%3Chttps://unstabel.github.io/project-adventurexp-frontend/%3E/static/js/453.69b2b188.chunk.js.map"
+    "main.css": "/project-adventurexp-frontend/static/css/main.10506a40.css",
+    "main.js": "/project-adventurexp-frontend/static/js/main.9f286a2b.js",
+    "static/js/453.69b2b188.chunk.js": "/project-adventurexp-frontend/static/js/453.69b2b188.chunk.js",
+    "index.html": "/project-adventurexp-frontend/index.html",
+    "main.10506a40.css.map": "/project-adventurexp-frontend/static/css/main.10506a40.css.map",
+    "main.9f286a2b.js.map": "/project-adventurexp-frontend/static/js/main.9f286a2b.js.map",
+    "453.69b2b188.chunk.js.map": "/project-adventurexp-frontend/static/js/453.69b2b188.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.10506a40.css",
-    "static/js/main.cb5faf56.js"
+    "static/js/main.9f286a2b.js"
   ]
 }
